@@ -1,0 +1,243 @@
+[SQL]
+create database seths_apothecary;
+create table patient (
+5
+mmj_license_number int PRIMARY KEY NOT NULL,
+patient_last_name varchar(100) NOT NULL,
+patient_first_name varchar(100) NOT NULL,
+patient_birth_date varchar(100) NOT NULL,
+patient_address varchar(100) NOT NULL,
+patient_phone int NOT NULL,
+patient_email varchar(100) NOT NULL,
+mmj_license_expiration varchar(100) NOT NULL
+);
+
+insert into patient (mmj_license_number, patient_last_name, patient_first_name, 
+patient_birth_date, patient_address, patient_email, mmj_license_expiration)
+values('88845689225', 'Latch', 'Patty', 'April 5th 1946', '231 South St Attleboro MA 02703', 
+'patty_latch@gmail.com', 'April 5th 2022'),
+('888456689227', 'Irvin', 'Mitchell', 'January 18th 1976', '13 Bryan Ave Attleboro MA 02703', 
+'imconsulting@aol.com', 'January 18th 2023'),
+('888456689200', 'Lawson', 'Shirley', 'May 7th 1958', '1435 Baldwin St Plymouth MA 02360', 
+'didiask4youropinionjan@gmail.com', 'May 7th 2021'),
+('888456689334', 'Beverly', 'Alastair', 'October 9th 1999', '614 Albany St Cambridge MA 02139', 
+'abeverly@mit.edu', 'October 9th 2022'),
+('888456689300', 'Masters', 'Jasmine', 'May 1st 1969', '777 Tremont St Boston MA 02118', 
+'andioop@gmail.com', 'May 1st 2021'),
+6
+('888456689200', 'Heron', 'Cady', 'June 8th 1986', '654 Orange St Framingham MA 01702', 
+'shedoesntevengohere@hotmail.com', 'June 8th 2021'),
+('888456689225', 'Monsoon', 'Jinxx', 'May 12th 1985', '756 S Main St Boston MA 02118', 
+'contact@jinxmonsoon.com', 'May 12th 2022'),
+('888456689223', 'Gummer', 'MaryLouise', 'June 22 1949', '32 Stearn St Malden MA 02148', 
+'khuvane@caa.com', 'June 22 2021'),
+('888456689201', 'Waits', 'Thomas', 'December 7th 1946', '101 Lucinda SQ Brockton MA 02301', 
+'leaveamessagelucille@gmail.com', 'December 7th 2021'),
+('888456689148', 'Belli', 'Willam', 'January 8th 1981', '1237 Arbor St Boston MA 02118', 
+'trade@willambelli.com', 'January 8th 2020');
+
+create table caregiver (
+cg_mmj_license_number int PRIMARY KEY NOT NULL,
+caregiver_last_name varchar(100) NOT NULL,
+caregiver_first_name varchar(100) NOT NULL,
+caregiver_birthdate varchar(100) NOT NULL,
+caregiver_phone int NOT NULL,
+caregiver_email varchar(100) NOT NULL,
+cg_mmj_license_expiration varchar(100) NOT NULL
+);
+
+insert into caregiver (cg_mmj_license_number, caregiver_last_name, caregiver_first_name, 
+caregiver_birthdate, caregiver_phone, caregiver_email, cg_mmj_license_expiration)
+7
+values ('51588698778', 'Hill', 'Lauryn', 'October 12th 1979', '3518049783', 
+'freebritney@gmail.com', 'October 12th 2023'),
+('51588699856', 'Earl', 'Duke', 'November 14th 1968', '4155887645', 'earlduke@simons.com', 
+'November 14th 2021'),
+('51588699489', 'Taylor', 'Teyana', 'April 12th 1991', '4125786211', 'reps@defjam.com', 'April 
+12th 2021'),
+('51588610059', 'Mason', 'Vernon', 'June 15th 1998', '4158875645', 'mvpstyle@gmail.com', 'June 
+15th 2020'),
+('51588692959', 'Fortner', 'Kieran', 'November 21st 1989', '5125789666', 
+'kieran.fortner@goldmansachs.com', 'November 21st 2022'),
+('51588685956', 'Danbridge', 'Eloise', 'July 4th 1966', '4158867755', 'eloise@suicidegirls.com', 
+'July 4th 2021'),
+('51588699786', 'Farthing', 'Benjamin', 'August 12th 1976, '4121152575', 'benfarth@gmail.com', 
+'August 12th 2020'),
+('51588699999', 'Darby', 'Rhys', 'October 22nd 1971', '3595561411', 'contact@caa.com', 'October 
+22nd 2021'),
+('51588697979', 'Hurtle', 'Shawna', 'February 8th 1970', '3126563030', 
+'shawnastop@shawnastop.com', 'February 8th 2020'),
+('51588685955', 'Placido', 'Jaime', 'July 11th 1963', '4155512517', 
+'jaimeplacido@inkstainedtattoos.com', 'July 11th 2021');
+
+create table dispensary (
+dispensary_id int PRIMARY KEY NOT NULL,
+8
+dispensary_name varchar(100) NOT NULL,
+dispensary_phone_number int NOT NULL,
+dispensary_address varchar(100) NOT NULL,
+dispensary_email varchar(100) NOT NULL,
+dispensary_mmj_license_no int NOT NULL,
+dispensary_license_expiration varchar(100) NOT NULL
+);
+
+
+insert into dispensary (dispensary_id, dispensary_name, dispensary_phone_number, 
+dispensary_address, dispensary_mmj_license_no, dispensary_license_expiration)
+values ('100', 'Seth's Apothecary #1', '5082265784', '318 Elm St North Attleboro MA 02760', 
+'31815', 'December 16th 2021'),
+('101', 'Seth's Apothecary #2', '5082216594', '107 Park St Attleboro MA 02703', '31825', 
+'December 16th 2021'),
+('102', 'Seth's Apothecary #3', '5082265151', '2134 Sanford St Attleboro MA 02703', '31836', 
+'December 16th 2021'),
+('103', 'Seth's Apothecary #4', '5082215346', '1276 West St Attleboro MA 02703', '31837', 
+'December 16th 2021');
+create table brand (
+brand_id int PRIMARY KEY,
+brand_name varchar(100) NOT NULL
+);
+
+
+insert into brand (brand_id, brand_name)
+values ('', 'Complemetary'),
+('89', 'Stiizy'),
+('65', 'Cresco'),
+('35', 'Grizzly Peak'),
+('110', 'West Coast Cure'),
+('115', 'Peak'),
+('710', 'Sira Naturals'),
+('91', 'Berkshire Roots'),
+('75', 'Theory Wellness'),
+('46', 'SA Brand');
+create table category (
+category_id int PRIMARY KEY NOT NULL,
+category_name varchar(100) NOT NULL
+);
+
+insert into category (category_id, category_name)
+values ('VH', 'vape hybrid'),
+('VI', 'vape indica'),
+('VS', 'vape sativa'),
+('FS', 'flower sativa'),
+('FI', 'flower indica'),
+('FH', 'flower hybrid'),
+('VCBD', 'vape cbd'),
+('FCBD', 'flower cbd'),
+('CH', 'concentrate hybrid'),
+('CI', 'concentrate indica');
+
+create table product (
+product_id int PRIMARY KEY,
+product_name varchar(100),
+brand_id int FOREIGN KEY REFERENCES brand(brand_id),
+category_id varchar(100) FOREIGN KEY REFERENCES category(category_id),
+product_price varchar(100)
+);
+
+insert into product (product_id, product_name, brand_id, category_id, product_price)
+values ('743956008', 'Stiizy Vape Indica 1G Biscotti Original Pod', '89', 'VI', '45.00'),
+('', 'Stiizy Vape Indica HalfGram IncredibleHulk Pod', '89', 'VI', 'NONE'),
+('743956009', 'Stiizy Vape Hybrid 1G PExpress Pod', '89', 'VH', '45.00'),
+('743956007', 'Stiizy Vape Sativa 1G BlueDream Pod', '89', 'VS', '55.00'),
+('743956010', 'Stiizy Vape Sativa HalfGram PremJack Pod', '89', 'VS', '20.00'),
+('743956006', 'Stiizy Vape Sativa 1G SourTangie Pod', '89', 'VS', '45.00'),
+('', 'Stiizy Vape Indica HalfGram Slurricane Pod', '89', 'VI', 'NONE'),
+('743956005', 'Stiizy Vape Indica 1G Skywalker Pod', '89', 'VI', '45.00'),
+('743956011', 'Stiizy Vape Hybrid HalfGram Gelato Pod', '89', 'VH', '33.00'),
+('743956004', 'Stiizy Vape Hybrid 1G BirthdayCake Pod', '89', 'VH', '45.00');
+
+create table stock (
+dispensary_id int FOREIGN KEY REFERENCES dispensary(dispensary_id),
+product_id int FOREIGN KEY REFERENCES product(product_id),
+stock_quantity int NOT NULL
+);
+
+insert into stock (dispensary_id, product_id, stock_quantity)
+values ('100', '743956004', '5'),
+('100', '743956006', '7'),
+('101', '743956004', '2'),
+('103', '743956004', '1'),
+('102', '', '5'),
+('101', '743956011', '2'),
+('102', '743956005', '3'),
+('100', '', '2'),
+('101', '743956008', '4'),
+('103', '743956008', '2');
+
+create table staff (
+staff_id int PRIMARY KEY NOT NULL,
+staff_last_name varchar(100) NOT NULL,
+staff_first_name varchar(100) NOT NULL,
+staff_activity varchar(100) NOT NULL,
+staff_address varchar(100) NOT NULL,
+staff_phone int NOT NULL,
+staff_email varchar(100) NOT NULL,
+staff_mmj_license_number int NOT NULL,
+staff_mmj_license_expiration varchar(100) NOT NULL,
+dispensary_id int FOREIGN KEY REFERENCES dispensary(dispensary_id)
+);
+
+insert into staff (staff_id, staff_last_name, staff_first_name, staff_activity)
+values ('541234', 'Abner', 'Seth', 'growops 100'),
+('541200', 'David', 'Marshawn', 'cultivation 100'),
+('541201', 'Harrow', 'Ty', 'budtending 102'),
+('541203', 'Garrett', 'April', 'budtending 101'),
+('541202', 'Hefner', 'Paulina', 'cultivation 100'), 
+('541198', 'Stevensen', 'Deejay', 'growops 100'),
+('541204', 'Hanover', 'Elliott', 'budtending 103'),
+('541195', 'Luton', 'Gabriela', 'budtending 100'),
+('541190', 'Sanderson', 'Bremen', 'growops 100'),
+('541205', 'Bird', 'Dee', 'cultivation 100');
+
+create table order (
+order_id int PRIMARY KEY NOT NULL,
+mmj_license_number int FOREIGN KEY REFERENCES patient(mmj_license_number) NOT 
+NULL,
+order_date varchar(100) NOT NULL,
+dispensary_id int FOREIGN KEY REFERENCES dispensary(dispensary_id) NOT NULL,
+cg_mmj_license_number int FOREIGN KEY REFERENCES 
+caregiver(cg_mmj_license_number) NOT NULL,
+staff_id int FOREIGN KEY REFERENCES staff(staff_id) NOT NULL
+);
+
+insert into order (order_id, dispensary_id, staff_id)
+values ('1357', '101', '541203'),
+('2000', '102', '541201'),
+('3574', '103', '541204'),
+('2525', '102', '541201'),
+('2255', '101', '541203'),
+('3000', '103', '541204'),
+('2999', '102', '541201'),
+('3152', '100', '541195'),
+('3010', '100', '541195'),
+('2001', '103', '541204');
+
+create table order_detail (
+order_id int FOREIGN KEY REFERENCES order(order_id) NOT NULL,
+product_id int FOREIGN KEY REFERENCES product(product_id),
+order_quantity int NOT NULL,
+order_amount int NOT NULL,
+order_activity varchar(100) NOT NULL
+); 
+
+insert into order_detail (order_id, order_quantity, order_amount)
+values ('3574', '4', '175.50'),
+('3010', '6', '595.65'),
+('2255', '3', '260'),
+('2001', '2', '96.50'),
+('2525', '6', '305.56'),
+('3000', '4', '205.00'),
+('2001', '8', '556.95'),
+('3152', '1', '48.50'),
+('2999', '1', '14.50'),
+('2000', '5', '556.00');
+
+[SQL Reporting]
+1. select * from staff where staff_mmj_license_expiration=’not active’;
+2. select * from categories where category_id=’CI’;
+3. select count (mmj_license_number) from patient;
+4. select * from caregiver where caregiver_birthdate=’August 5th’;
+5. select distinct dispensary_id, dispensary_license_expiration from dispensary where 
+dispensary_id= ‘102’;
+6. select distinct mmj_license_number, order_date from order where mmj_license_number= 
+‘888456689200’AND order_date between ‘March 1st 2021’ and ‘March 31st 2021’;
